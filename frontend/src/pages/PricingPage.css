@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =====================
+   Shell / Page Wrapper
+   ===================== */
+.pp-shell {
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px 80px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =====================
+   Decorative Circles
+   ===================== */
+.pp-decor {
+  position: absolute;
+  border-radius: 50%;
+  border: 55px solid #226526;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pp-decor-tl {
+  width: 520px;
+  height: 520px;
+  top: -220px;
+  left: -180px;
+  opacity: 0.18;
+}
+
+.pp-decor-br {
+  width: 600px;
+  height: 600px;
+  bottom: -260px;
+  right: -200px;
+  opacity: 0.12;
+}
+
+/* =====================
+   Back Button
+   ===================== */
+.pp-back {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 2px solid #226526;
+  color: #226526;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.pp-back:hover {
+  background: rgba(34, 101, 38, 0.07);
+  transform: translateX(-2px);
+}
+
+/* =====================
+   Page Header
+   ===================== */
+.pp-header {
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.pp-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #226526;
+  margin: 0 0 14px;
+}
+
+.pp-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #226526;
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.pp-sub {
+  font-size: 16px;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.pp-sub strong {
+  color: #226526;
+}
+
+/* =====================
+   Plans Grid
+   ===================== */
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================
+   Plan Card
+   ===================== */
+.pp-card {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.pp-card:hover {
+  box-shadow: 0 12px 40px rgba(34, 101, 38, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Highlighted / Popular card */
+.pp-card-highlight {
+  background: #022c16;
+  border-color: #226526;
+  box-shadow: 0 16px 48px rgba(34, 101, 38, 0.3);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.pp-card-highlight:hover {
+  box-shadow: 0 20px 56px rgba(34, 101, 38, 0.38);
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* Badge */
+.pp-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22c55e;
+  color: #022c16;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* Card Icon */
+.pp-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(34, 101, 38, 0.1);
+  color: #226526;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.pp-card-highlight .pp-card-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+/* Plan Name */
+.pp-plan-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.pp-card-highlight .pp-plan-name {
+  color: #ffffff;
+}
+
+/* Plan Sub */
+.pp-plan-sub {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.pp-card-highlight .pp-plan-sub {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Price Row */
+.pp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.pp-price {
+  font-size: 30px;
+  font-weight: 900;
+  color: #226526;
+  line-height: 1;
+}
+
+.pp-card-highlight .pp-price {
+  color: #22c55e;
+}
+
+.pp-period {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.pp-card-highlight .pp-period {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* CTA Button */
+.pp-cta {
+  width: 100%;
+  padding: 13px 0;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  margin-bottom: 28px;
+}
+
+.pp-cta-outline {
+  background: transparent;
+  color: #226526;
+  border: 2.5px solid #226526;
+}
+
+.pp-cta-outline:hover {
+  background: rgba(34, 101, 38, 0.06);
+  transform: translateY(-2px);
+}
+
+.pp-cta-solid {
+  background: #22c55e;
+  color: #022c16;
+  border: none;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+}
+
+.pp-cta-solid:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
+}
+
+/* Features List */
+.pp-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.pp-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.pp-card-highlight .pp-feature-item {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pp-feature-off {
+  opacity: 0.38;
+}
+
+.pp-feature-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pp-icon-ok {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.pp-card-highlight .pp-icon-ok {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.pp-icon-no {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+/* =====================
+   Footer Note
+   ===================== */
+.pp-note {
+  margin-top: 48px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pp-note strong {
+  color: #226526;
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 960px) {
+  .pp-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .pp-card-highlight {
+    transform: none;
+    order: -1;
+  }
+
+  .pp-card-highlight:hover {
+    transform: translateY(-4px);
+  }
+
+  .pp-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pp-shell {
+    padding: 50px 16px 60px;
+  }
+
+  .pp-back {
+    top: 16px;
+    left: 16px;
+  }
+
+  .pp-title {
+    font-size: 28px;
+  }
+}

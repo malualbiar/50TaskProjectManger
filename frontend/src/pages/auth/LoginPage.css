@@ -1,0 +1,489 @@
+/* ===========================
+   Login Page — Full Layout
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Reset for auth pages */
+.lp-shell *,
+.lp-shell *::before,
+.lp-shell *::after {
+  box-sizing: border-box;
+}
+
+.lp-shell {
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #f3f4f6;
+}
+
+/* ═══════════════════════════
+   LEFT PANEL
+   ═══════════════════════════ */
+.lp-left {
+  width: 480px;
+  min-width: 380px;
+  background: linear-gradient(160deg, #2b7d2f 0%, #226526 45%, #154217 100%);
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle decorative circles */
+.lp-left::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.lp-left::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+/* Logo */
+.lp-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lp-logo-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-logo-text {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Hero */
+.lp-hero { margin-top: 20px; }
+
+.lp-hero-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.lp-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/* ═══════════════════════════
+   RIGHT PANEL
+   ═══════════════════════════ */
+.lp-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  position: relative;
+  background: #f3f4f6;
+}
+
+/* ═══════════════════════════
+   CARD
+   ═══════════════════════════ */
+.lp-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 34px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Card top */
+.lp-card-top {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.lp-card-icon {
+  width: 54px;
+  height: 54px;
+  background: #f0fdf4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.lp-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.lp-card-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Social buttons */
+.lp-social-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.lp-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 8px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.lp-social-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Divider */
+.lp-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Fields */
+.lp-field {
+  margin-bottom: 16px;
+}
+
+.lp-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.lp-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lp-input-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.lp-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9px;
+  font-size: 13.5px;
+  color: #111827;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.18s, background 0.18s;
+  font-family: inherit;
+}
+
+.lp-input:focus {
+  border-color: #22c55e;
+  background: #fff;
+}
+
+.lp-input-icon-pad {
+  padding-left: 38px;
+}
+
+.lp-input-icon-pad-r {
+  padding-right: 42px;
+}
+
+.lp-input-error {
+  border-color: #ef4444 !important;
+  background: #fff5f5;
+}
+
+/* Role selector dropdown */
+.lp-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #111827;
+}
+
+.lp-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.lp-eye-btn:hover { color: #374151; }
+
+.lp-error-msg {
+  display: block;
+  font-size: 11.5px;
+  color: #ef4444;
+  margin-top: 5px;
+}
+
+/* Remember / Forgot row */
+.lp-row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.lp-remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.lp-checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: #226526;
+  cursor: pointer;
+}
+
+.lp-forgot-link {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #226526;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.lp-forgot-link:hover { color: #154217; text-decoration: underline; }
+
+/* Submit button */
+.lp-submit-btn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px 20px;
+  background: #226526;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.18s, transform 0.12s;
+  letter-spacing: 0.01em;
+}
+
+.lp-submit-btn:hover:not(:disabled) {
+  background: #154217;
+  transform: translateY(-1px);
+}
+
+.lp-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.lp-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lp-spin 0.7s linear infinite;
+}
+
+@keyframes lp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Security badge */
+.lp-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 11.5px;
+  color: #9ca3af;
+}
+
+/* Register link */
+.lp-register-link {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin: 14px 0 0;
+}
+
+.lp-link {
+  color: #16a34a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lp-link:hover { text-decoration: underline; }
+
+/* ═══════════════════════════
+   FORGOT PASSWORD OVERLAY
+   ═══════════════════════════ */
+.lp-forgot-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(243,244,246,0.92);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  border-radius: 0;
+  padding: 24px;
+}
+
+.lp-forgot-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 26px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  animation: lp-fade-in 0.2s ease;
+}
+
+@keyframes lp-fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.lp-forgot-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.lp-forgot-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.lp-forgot-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.lp-forgot-cancel {
+  flex: 1;
+  padding: 11px 0;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lp-forgot-cancel:hover { background: #e5e7eb; }
+
+.lp-forgot-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+/* ═══════════════════════════
+   RESPONSIVE
+   ═══════════════════════════ */
+@media (max-width: 900px) {
+  .lp-left { display: none; }
+  .lp-right { background: #f3f4f6; }
+}
+
+@media (max-width: 480px) {
+  .lp-card { padding: 28px 20px; border-radius: 12px; }
+  .lp-social-row { flex-direction: column; }
+}

@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   Top Navigation Bar
+   ===================== */
+.landing-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 36px;
+  pointer-events: none;
+}
+
+.landing-nav-logo {
+  height: 72px;
+  width: auto;
+  cursor: pointer;
+  pointer-events: all;
+  /* White bg circle removed — the logo already has a white bg */
+  filter: drop-shadow(0 2px 6px rgba(34, 101, 38, 0.10));
+  transition: transform 0.2s;
+}
+
+.landing-nav-logo:hover {
+  transform: scale(1.04);
+}
+
+.landing-nav-actions {
+  display: flex;
+  gap: 14px;
+  pointer-events: all;
+}
+
+.btn-nav-outline {
+  background-color: transparent;
+  color: #226526;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 10px 26px;
+  border: 2.5px solid #226526;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.btn-nav-outline:hover {
+  background-color: rgba(34, 101, 38, 0.07);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 101, 38, 0.18);
+}
+
+.landing-container {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  display: block;
+  position: relative;
+  isolation: isolate;
+  /* Create a clean stacking context */
+}
+
+/* Background Layer Management */
+.section-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -100;
+  /* Deepest layer */
+}
+
+.hero-bg {
+  top: 0;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.features-bg {
+  top: 100vh;
+  bottom: 0;
+  background-color: #ffffff;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  /* z-index removed - content stays at default (0) while decors are negative */
+}
+
+/* Decorative Circles */
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 55px solid #226526;
+  box-sizing: border-box;
+  background-color: transparent;
+  z-index: -50;
+  /* Middle layer (above backgrounds, below content) */
+  pointer-events: none;
+}
+
+.top-left {
+  width: 600px;
+  height: 600px;
+  top: -300px;
+  left: -200px;
+}
+
+.bottom-right {
+  width: 600px;
+  height: 600px;
+  top: 55vh;
+  /* Positioned to span across the hero and features boundary */
+  right: -250px;
+}
+
+/* Main Content Wrapper */
+.landing-content {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* z-index removed - naturally on top of negative layers */
+}
+
+/* Typography */
+.landing-subtitle {
+  font-size: 32px;
+  font-weight: 900;
+  color: #226526;
+  letter-spacing: 0.6em;
+  /* Adds wide spacing */
+  text-indent: 0.6em;
+  /* Centers text compensating for trailing spacing */
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+}
+
+.landing-title {
+  font-size: 88px;
+  font-weight: 900;
+  color: #226526;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.landing-tagline {
+  font-size: 15px;
+  font-weight: 800;
+  color: #3b7cf0;
+  /* Lighter, striking Blue */
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  margin: 0 0 54px 0;
+}
+
+/* Actions (Buttons) */
+.landing-actions {
+  display: flex;
+  gap: 24px;
+}
+
+.btn-contact {
+  background-color: #226526;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  padding: 16px 36px;
+  border: 2px solid #226526;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(34, 101, 38, 0.4);
+  /* Green shadow */
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(34, 101, 38, 0.5);
+}
+
+.btn-demo {
+  background-color: transparent;
+  color: #226526;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  padding: 16px 36px;
+  border: 2px solid #226526;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-demo:hover {
+  background-color: rgba(34, 101, 38, 0.05);
+  /* Slight green fill */
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  /* z-index removed - content stays at default (0) while decors are negative */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  /* z-index removed - naturally on top of negative layers */
+}
+
+.features-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #226526;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #3b7cf0;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  /* z-index removed - naturally on top of negative layers */
+}
+
+.feature-card {
+  background: #f8fafc;
+  /* Slightly lighter grey than section for depth */
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e2e8f0;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(34, 101, 38, 0.1);
+  color: #226526;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.feature-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.feature-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Footer styling */
+.landing-footer {
+  padding: 40px;
+  text-align: center;
+  background-color: #226526;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 60px 20px;
+  }
+
+  .features-title {
+    font-size: 36px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-left {
+    width: 350px;
+    height: 350px;
+    top: -150px;
+    left: -120px;
+    border-width: 35px;
+  }
+
+  .bottom-right {
+    width: 450px;
+    height: 450px;
+    bottom: -200px;
+    right: -150px;
+    border-width: 35px;
+  }
+
+  .landing-subtitle {
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    text-indent: 0.4em;
+  }
+
+  .landing-title {
+    font-size: 56px;
+  }
+
+  .landing-tagline {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+  }
+
+  .landing-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-contact,
+  .btn-demo {
+    width: 100%;
+  }
+}
